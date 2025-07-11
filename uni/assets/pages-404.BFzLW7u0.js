@@ -1,0 +1,1 @@
+import{_ as n,c as o,w as a,a as t,o as s,b as u}from"./index-CDFDhUiu.js";const d=n({},[["render",function(n,d){const e=t("layout-notfound-uni");return s(),o(e,null,{default:a(()=>[u("div",null," Not found ")]),_:1})}]]);export{d as default};

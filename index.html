@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Vitesse Vixt</title>
+    <link rel="icon" type="image/svg+xml" href="/vitesse-vixt/favicon.svg" />
+    <script>
+      ;(function () {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        const setting = localStorage.getItem('color-scheme') || 'auto'
+        if (setting === 'dark' || (prefersDark && setting !== 'light'))
+          document.documentElement.classList.toggle('dark', true)
+      })()
+      function toggleDark() {
+        const isDark = document.documentElement.classList.contains('dark')
+        document.documentElement.classList.toggle('dark', !isDark)
+        localStorage.setItem('color-scheme', isDark ? 'light' : 'dark')
+      }
+    </script>
+    <style>
+      html,
+      body,
+      #app {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      html.dark {
+        background: #121212;
+        color-scheme: dark;
+      }
+
+      .box {
+        display:flex;flex-direction:column;align-items:center;border-radius:0.75rem;--un-bg-opacity:1;background-color:rgb(246 246 246 / var(--un-bg-opacity)) /* #f6f6f6 */;padding:1.5rem;
+      }.dark .box{--un-bg-opacity:1;background-color:rgb(34 34 34 / var(--un-bg-opacity)) /* #222222 */;}.box:hover{--un-bg-opacity:0.6;}
+
+      .box > .icon {
+        margin-bottom:1.25rem;width:3rem;height:3rem;
+      }
+
+      .box > .title {
+        font-size:1rem;line-height:1.5rem;font-weight:700;opacity:0.75;
+      }
+
+      .box > .details {
+        padding-top:0.5rem;font-size:0.875rem;line-height:1.25rem;opacity:0.5;
+      }
+    </style>
+    <script type="module" crossorigin src="/vitesse-vixt/assets/index-Wv-5c2Ix.js"></script>
+    <link rel="stylesheet" crossorigin href="/vitesse-vixt/assets/index-CzgVCYsV.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <button title="toggleDark" icon-btn absolute right-4 top-4 onclick="toggleDark()">
+        <div i="carbon-sun dark:carbon-moon" />
+      </button>
+      <div flex gap-4 justify-center items-center h-full flex-col md="flex-row">
+        <a class="box" href="/vitesse-vixt/vue">
+          <img class="icon" src="/vitesse-vixt/vue.svg" alt="vue" />
+          <div class="title">Vitesse Vixt</div>
+          <div class="details">Vue</div>
+        </a>
+        <a class="box" href="/vitesse-vixt/react">
+          <img class="icon" src="/vitesse-vixt/react.svg" alt="react" />
+          <div class="title">Vitesse Vixt</div>
+          <div class="details">React</div>
+        </a>
+        <a class="box" href="/vitesse-vixt/uni">
+          <img class="icon" src="/vitesse-vixt/uni.png" alt="uni" />
+          <div class="title">Vitesse Vixt</div>
+          <div class="details">Uni-app</div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
