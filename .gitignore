@@ -1,0 +1,7 @@
+.hbuilderx
+node_modules
+dist
+.vixt
+pages.json
+cache
+*.local

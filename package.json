@@ -1,0 +1,51 @@
+{
+  "name": "vitesse-vixt",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "build": "pnpm -F \"./packages/*\" build",
+    "build:react": "pnpm -F react build",
+    "build:uni": "pnpm -F uni build",
+    "build:vue": "pnpm -F vue build",
+    "dev": "pnpm -F vitesse dev",
+    "dev:react": "pnpm -F react dev",
+    "dev:uni": "pnpm -F uni dev",
+    "dev:vue": "pnpm -F vue dev",
+    "lint": "eslint .",
+    "postinstall": "npx simple-git-hooks",
+    "upd": "taze major -r -l -I"
+  },
+  "dependencies": {
+    "@unocss/reset": "catalog:",
+    "vixt": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@iconify-json/carbon": "catalog:",
+    "@unocss/eslint-plugin": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "lint-staged": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "taze": "catalog:",
+    "typescript": "catalog:"
+  },
+  "resolutions": {
+    "@vue/shared": "^3.5.17",
+    "vite": "^7.0.4",
+    "vue": "^3.5.17"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx --no-install commitlint --edit $1",
+    "pre-commit": "pnpm lint-staged"
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

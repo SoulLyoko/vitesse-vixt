@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Vitesse Vixt</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      ;(function () {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        const setting = localStorage.getItem('color-scheme') || 'auto'
+        if (setting === 'dark' || (prefersDark && setting !== 'light'))
+          document.documentElement.classList.toggle('dark', true)
+      })()
+      function toggleDark() {
+        const isDark = document.documentElement.classList.contains('dark')
+        document.documentElement.classList.toggle('dark', !isDark)
+        localStorage.setItem('color-scheme', isDark ? 'light' : 'dark')
+      }
+    </script>
+    <script type="module">
+      import '@unocss/reset/tailwind.css'
+      import 'virtual:uno.css'
+    </script>
+    <style>
+      html,
+      body,
+      #app {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      html.dark {
+        background: #121212;
+        color-scheme: dark;
+      }
+
+      .box {
+        @apply bg-light dark:bg-dark hover:bg-op-60 rd-3 p-6 flex flex-col items-center;
+      }
+
+      .box > .icon {
+        @apply mb-5  size-12;
+      }
+
+      .box > .title {
+        @apply text-base font-bold op-75;
+      }
+
+      .box > .details {
+        @apply pt-2 text-sm op-50;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <button title="toggleDark" icon-btn absolute right-4 top-4 onclick="toggleDark()">
+        <div i="carbon-sun dark:carbon-moon" />
+      </button>
+      <div flex gap-4 justify-center items-center h-full flex-col md="flex-row">
+        <a class="box" href="%BASE_URL%vue">
+          <img class="icon" src="/vue.svg" alt="vue" />
+          <div class="title">Vitesse Vixt</div>
+          <div class="details">Vue</div>
+        </a>
+        <a class="box" href="%BASE_URL%react">
+          <img class="icon" src="/react.svg" alt="react" />
+          <div class="title">Vitesse Vixt</div>
+          <div class="details">React</div>
+        </a>
+        <a class="box" href="%BASE_URL%uni">
+          <img class="icon" src="/uni.png" alt="uni" />
+          <div class="title">Vitesse Vixt</div>
+          <div class="details">Uni-app</div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

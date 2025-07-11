@@ -1,0 +1,13 @@
+{
+  "name": "@vv/vitesse",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vv/shared": "workspace:*"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@vv/vue",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vv/shared": "workspace:*",
+    "nprogress": "catalog:"
+  },
+  "devDependencies": {
+    "@types/nprogress": "catalog:"
+  }
+}
