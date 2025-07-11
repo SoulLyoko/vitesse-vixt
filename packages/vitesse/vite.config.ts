@@ -1,11 +1,12 @@
-import { BASE_URL } from '@vv/shared/src/constants/base'
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
+import { name } from '../../package.json'
 
 export default defineConfig({
   plugins: [Unocss()],
-  base: BASE_URL,
+  base: `/${name}/`,
   build: {
     outDir: '../../dist',
+    emptyOutDir: true,
   },
 })

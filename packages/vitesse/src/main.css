@@ -1,0 +1,28 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html.dark {
+  background: #121212;
+  color-scheme: dark;
+}
+
+.box {
+  --uno: 'dark:bg-dark' 'hover:bg-op-60' bg-light rd-3 p-6 flex flex-col items-center;
+}
+
+.box > .icon {
+  --uno: mb-5 size-12;
+}
+
+.box > .title {
+  --uno: text-base font-bold op-75;
+}
+
+.box > .details {
+  --uno: pt-2 text-sm op-50;
+}
