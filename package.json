@@ -13,7 +13,7 @@
     "dev:uni": "pnpm -F uni dev",
     "dev:vue": "pnpm -F vue dev",
     "lint": "eslint .",
-    "postinstall": "npx simple-git-hooks",
+    "postinstall": "tsx scripts/patch-unocss.ts && npx simple-git-hooks",
     "upd": "taze major -r -l -I"
   },
   "dependencies": {
