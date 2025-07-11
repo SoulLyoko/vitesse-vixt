@@ -15,7 +15,7 @@ const { VITE_APP_TITLE } = import.meta.env
   <div>
     <div i-carbon-campsite text-4xl inline-block />
     <p>
-      <a rel="noreferrer" :href="REPO_URL" target="_blank">
+      <a :href="BASE_URL">
         {{ VITE_APP_TITLE }}
       </a>
     </p>
