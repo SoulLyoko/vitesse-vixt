@@ -1,0 +1,1 @@
+import{z as e,r as a,A as r}from"./index-CwnYbuw8.js";const s=e("user",()=>{const e=a(""),s=a(new Set),u=r(()=>Array.from(s.value));return{setNewName:function(a){e.value&&s.value.add(e.value),e.value=a},otherNames:r(()=>u.value.filter(a=>a!==e.value)),savedName:e}});export{s as u};
